@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanya Kewalramani | Business Development & Sustainability Leader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #5fa8ad;
+            --primary-light: #87ceeb;
+            --primary-dark: #4a8c91;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #e8f5f6 0%, #d0ebee 100%);
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-label {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(95, 168, 173, 0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 3rem 2rem;
+            margin-top: -2rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Journey Section */
+        .journey {
+            background: var(--bg-light);
+        }
+
+        .journey-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .journey-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .journey-marker {
+            min-width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .journey-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .journey-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .value-props {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .value-item {
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .value-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .value-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Work Section */
+        .work {
+            background: var(--bg-light);
+        }
+
+        .work-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .work-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+        }
+
+        .work-company {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-period {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .work-content {
+            padding: 2rem;
+        }
+
+        .work-content h4 {
+            color: var(--primary);
+            margin: 1.5rem 0 0.5rem;
+            font-size: 1rem;
+        }
+
+        .work-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .work-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .work-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .work-content li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .work-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .education-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+
+        .education-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .institution {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .period {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-tag,
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-links .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .contact-links .btn:hover {
+            background: var(--bg-light);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .work-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">TK</a>
+            <ul class="nav-links">
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-label">Business Development • Sustainability Leader</span>
+                <h1>I bridge commercial growth with sustainability impact.</h1>
+                <p>5+ years driving business development at impact-driven organizations. From Fortune 500 workshops to zero-waste innovations. MBA candidate at Edinburgh Business School seeking my next challenge in sustainable business development.</p>
+                <div class="cta-buttons">
+                    <a href="https://www.linkedin.com/in/tanyakewalramani1996" class="btn btn-primary" target="_blank">Connect on LinkedIn</a>
+                    <a href="#work" class="btn btn-secondary">See My Work →</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Profile_Photo_Tanya.png" alt="Tanya Kewalramani">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-icon">📈</div>
+                <div class="stat-number">150x</div>
+                <div class="stat-label">GMV Growth</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">💼</div>
+                <div class="stat-number">40+</div>
+                <div class="stat-label">B2B Clients Onboarded</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🌍</div>
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Sustainability Workshops</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Revenue Increase</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">My Path</div>
+                <h2 class="section-title">From Gandhidham to Global Impact</h2>
+            </div>
+            <div class="journey-timeline">
+                <div class="journey-item">
+                    <div class="journey-marker">🏠</div>
+                    <div class="journey-content">
+                        <h3>Gandhidham: Where It Began</h3>
+                        <p>Growing up in a small refugee town built after Partition taught me that resilience, adaptability, and sustainability aren't corporate buzzwords—they're a way of life. This shaped my curiosity about balancing profitability with environmental stewardship.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-marker">🏛️</div>
+                    <div class="journey-content">
+                        <h3>Heritage Management: Finding My Voice</h3>
+                        <p>My Master's in Heritage Management opened my eyes to how cultural preservation intersects with sustainability. I learned to bridge the gap between tradition and innovation, managing national digitization projects and working closely with grassroots artisanal communities.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-marker">🌱</div>
+                    <div class="journey-content">
+                        <h3>Sustainability: Making Real Impact</h3>
+                        <p>Five years at impact-driven organizations like Bare Necessities (India's first B Corp-certified zero-waste company) taught me how to translate sustainability values into commercial results. I onboarded 40+ B2B clients, facilitated workshops for Fortune 500 companies, and drove 150x GMV growth—all while staying true to Planet, People, and Profit.</p>
+                    </div>
+                </div>
+                <div class="journey-item">
+                    <div class="journey-marker">🎓</div>
+                    <div class="journey-content">
+                        <h3>Edinburgh MBA: Scaling My Impact</h3>
+                        <p>Pursuing my MBA at Edinburgh Business School in a UNESCO World Heritage city is the perfect next step. I'm sharpening my strategic toolkit, building cross-functional leadership skills, and preparing to drive system-level change within businesses globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">About Me</div>
+                <h2 class="section-title">A Business Developer at Heart</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm driven by one core belief: sustainable business isn't just the right thing to do—it's the smart thing to do.</p>
+                    <p>Over five years, I've led commercial operations at impact-driven organizations, managing Fortune 500 client accounts across the US, UK, and South Africa. My work spans from building B2B sales playbooks that increased revenue by 50% to facilitating circular economy workshops for companies like IKEA, JPMorgan, and Target.</p>
+                    <p>What makes me different? I bring a unique trifecta of Planet, People, and Profit. I translate complex sustainability concepts into commercial strategies. I bridge technical innovation with cultural capital. And I do it all with the agility and resourcefulness that comes from five years in the startup ecosystem.</p>
+                    <p>Now at Edinburgh Business School, I'm building the leadership and analytical skills to scale this impact—helping businesses embed sustainability at their core while driving profitable growth.</p>
+                </div>
+                <div class="value-props">
+                    <div class="value-item">
+                        <h3>💬 Stakeholder Alignment</h3>
+                        <p>Proven ability to lead high-stakes dialogues with C-suite executives and diverse global teams. Managed communication strategies for Fortune 500 clients ensuring strategic alignment and commercial success.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>📊 Data-Driven Problem Solving</h3>
+                        <p>Designed B2B campaigns achieving 60% open rates through rigorous data analysis. Built business intelligence loops identifying category trends and informing scalable go-to-market decisions.</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>🌍 Impact-Led Leadership</h3>
+                        <p>Five years leading commercial operations at sustainable organizations. Personally practice conscious consumerism and actively support SDG 12 (Responsible Consumption) and SDG 13 (Climate Action).</p>
+                    </div>
+                    <div class="value-item">
+                        <h3>⚡ Startup Agility</h3>
+                        <p>Startup background provides valuable resourcefulness and intrapreneurial problem-solving that translates exceptionally well to larger organizations navigating transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">Selected Work</div>
+                <h2 class="section-title">Business Development Impact</h2>
+            </div>
+            <div class="work-grid">
+                <!-- Bare Necessities -->
+                <div class="work-card">
+                    <div class="work-header">
+                        <div class="work-company">Bare Necessities, India • B Corp Certified Zero-Waste FMCG</div>
+                        <h3 class="work-title">Business Development Lead</h3>
+                        <div class="work-period">January 2023 - April 2025</div>
+                    </div>
+                    <div class="work-content">
+                        <h4>🎯 The Challenge</h4>
+                        <p>Scale a zero-waste FMCG brand's commercial operations while maintaining sustainability principles. Build B2B relationships with Fortune 500 companies and drive category expansion.</p>
+                        
+                        <h4>🔧 My Approach</h4>
+                        <ul>
+                            <li>Built end-to-end B2B sales playbooks covering lead acquisition, conversion, retention, and upselling</li>
+                            <li>Led category strategy experiments on pricing and assortment through demand analytics and A/B testing</li>
+                            <li>Spearheaded partnerships for circular economy product lines with domestic and cross-border collaborations</li>
+                            <li>Conducted 40+ sustainability workshops for Fortune 500 companies including JPMorgan, CISCO, Target, and Flipkart</li>
+                        </ul>
+
+                        <h4>📈 The Impact</h4>
+                        <p>Onboarded 40+ B2B clients and managed 8 key Fortune 500 accounts contributing to 30% of annual revenue. Drove 150x GMV growth on Amazon and marketplaces. Achieved 50% revenue increase for the department. Expanded category presence by 25% into retail and sustainable HoReCa.</p>
+
+                        <div class="work-metrics">
+                            <div class="metric">
+                                <div class="metric-value">150x</div>
+                                <div class="metric-label">GMV Growth</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">40+</div>
+                                <div class="metric-label">B2B Clients</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">50%</div>
+                                <div class="metric-label">Revenue Increase</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">30%</div>
+                                <div class="metric-label">Annual Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vizara Technologies -->
+                <div class="work-card">
+                    <div class="work-header">
+                        <div class="work-company">Vizara Technologies, India • AR, VR, AI Solutions for Heritage</div>
+                        <h3 class="work-title">Business Development Associate & Project Manager</h3>
+                        <div class="work-period">March 2022 - December 2022</div>
+                    </div>
+                    <div class="work-content">
+                        <h4>🎯 The Challenge</h4>
+                        <p>Lead a national heritage digitization project despite non-technical background. Coordinate engineers, researchers, and cultural institutions while identifying new B2B/B2G opportunities.</p>
+                        
+                        <h4>🔧 My Approach</h4>
+                        <ul>
+                            <li>Managed on-time delivery of complex digitization projects requiring coordination across technical and cultural stakeholders</li>
+                            <li>Identified and secured B2B/B2G opportunities through government tenders and partnership development</li>
+                            <li>Built business intelligence insight loops to identify category trends and inform scalable GTM decisions</li>
+                            <li>Used data storytelling to communicate findings and enable leadership prioritization</li>
+                        </ul>
+
+                        <h4>📈 The Impact</h4>
+                        <p>Successfully delivered national heritage digitization project on time. The client specifically requested me as POC, leading to a fully funded project trip. Demonstrated ability to navigate ambiguity and create shared ownership culture across cross-functional teams.</p>
+
+                        <div class="work-metrics">
+                            <div class="metric">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">On-Time Delivery</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">National</div>
+                                <div class="metric-label">Project Scale</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Cross-Functional</div>
+                                <div class="metric-label">Team Leadership</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">B2G</div>
+                                <div class="metric-label">Gov't Partnerships</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gaatha Handicrafts -->
+                <div class="work-card">
+                    <div class="work-header">
+                        <div class="work-company">Gaatha Handicrafts, India • E-Commerce for Artisans</div>
+                        <h3 class="work-title">Marketing Associate</h3>
+                        <div class="work-period">January 2021 - August 2021</div>
+                    </div>
+                    <div class="work-content">
+                        <h4>🎯 The Challenge</h4>
+                        <p>Enable grassroots artisans to access digital markets for the first time. Build commercial infrastructure while respecting traditional craft practices.</p>
+                        
+                        <h4>🔧 My Approach</h4>
+                        <ul>
+                            <li>Onboarded 30+ artisans, enabling their first digital selling experience with hands-on training and support</li>
+                            <li>Built B2B sales playbooks covering full customer lifecycle—acquisition, conversion, retention, upselling</li>
+                            <li>Crafted storytelling-driven product content grounded in deep craft research and cultural context</li>
+                            <li>Managed digital marketing calendars to improve visibility and conversion across social channels</li>
+                        </ul>
+
+                        <h4>📈 The Impact</h4>
+                        <p>Successfully onboarded 30+ artisans to digital platforms. Achieved 20% revenue increase for the department through systematic sales playbook implementation. Bridged traditional craft with modern commerce while preserving cultural authenticity.</p>
+
+                        <div class="work-metrics">
+                            <div class="metric">
+                                <div class="metric-value">30+</div>
+                                <div class="metric-label">Artisans Onboarded</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">20%</div>
+                                <div class="metric-label">Revenue Growth</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Digital</div>
+                                <div class="metric-label">First Sales</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Cultural</div>
+                                <div class="metric-label">Impact</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">Education</div>
+                <h2 class="section-title">Academic Foundation</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">🎓</div>
+                    <h3>MBA</h3>
+                    <div class="institution">University of Edinburgh Business School</div>
+                    <div class="period">September 2025 - July 2026</div>
+                    <p><strong>Relevant Modules:</strong> Business Analytics, Strategic Leadership, Marketing and Communications</p>
+                    <p><strong>Strategic Consultancy:</strong> Edinburgh Airport customer journey enhancement, E-commerce growth strategies for local businesses</p>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">🏛️</div>
+                    <h3>Master's in Heritage Management</h3>
+                    <div class="institution">Ahmedabad University, India</div>
+                    <div class="period">June 2017 - May 2019</div>
+                    <p><strong>Thesis:</strong> Measuring Sustainable Cultural Tourism—employing sustainable tourism as a catalyst to safeguard intangible cultural heritage knowledge systems and practices</p>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">📊</div>
+                    <h3>Bachelor's in Commerce</h3>
+                    <div class="institution">Ahmedabad University, India</div>
+                    <div class="period">June 2014 - May 2017</div>
+                    <p><strong>Major:</strong> Accounting and Marketing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-tag">What's Next?</div>
+                <h2 class="section-title">Let's Build Something Sustainable Together</h2>
+            </div>
+            <p>I'm seeking business development, sustainability strategy, and consulting opportunities for Summer 2026.<br>If you're building sustainable impact, I'd love to connect.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/tanyakewalramani1996" class="btn" target="_blank">Connect on LinkedIn</a>
+                <a href="mailto:T.Kewalramani@sms.ed.ac.uk" class="btn">T.Kewalramani@sms.ed.ac.uk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/tanyakewalramani1996" target="_blank">LinkedIn</a>
+            <a href="mailto:T.Kewalramani@sms.ed.ac.uk">Email</a>
+        </div>
+        <p>© 2026 Tanya Kewalramani. Built with purpose.</p>
+    </footer>
+</body>
+</html>
